@@ -1,9 +1,0 @@
-H:\Resharper\TicTacToe\Data\bin\Debug\netcoreapp3.1\Data.deps.json
-H:\Resharper\TicTacToe\Data\bin\Debug\netcoreapp3.1\Data.dll
-H:\Resharper\TicTacToe\Data\bin\Debug\netcoreapp3.1\Data.pdb
-H:\Resharper\TicTacToe\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
-H:\Resharper\TicTacToe\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
-H:\Resharper\TicTacToe\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
-H:\Resharper\TicTacToe\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
-H:\Resharper\TicTacToe\Data\obj\Debug\netcoreapp3.1\Data.dll
-H:\Resharper\TicTacToe\Data\obj\Debug\netcoreapp3.1\Data.pdb
