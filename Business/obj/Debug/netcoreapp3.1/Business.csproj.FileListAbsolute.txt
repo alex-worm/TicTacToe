@@ -1,0 +1,9 @@
+H:\Resharper\TicTacToe\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+H:\Resharper\TicTacToe\Business\bin\Debug\netcoreapp3.1\Business.dll
+H:\Resharper\TicTacToe\Business\bin\Debug\netcoreapp3.1\Business.pdb
+H:\Resharper\TicTacToe\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+H:\Resharper\TicTacToe\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+H:\Resharper\TicTacToe\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+H:\Resharper\TicTacToe\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+H:\Resharper\TicTacToe\Business\obj\Debug\netcoreapp3.1\Business.dll
+H:\Resharper\TicTacToe\Business\obj\Debug\netcoreapp3.1\Business.pdb

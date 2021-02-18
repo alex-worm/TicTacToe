@@ -1,71 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace UI
 {
     public partial class Form1 : Form
     {
-        private const char PlayerSymbol = 'O';
-        private const string Winner = "{0} IS WINNER";
-        private const string Tie = "TIE";
+        public const string PlayerSymbol = "O";
+        public const string BotSymbol = "X"; 
+        public const string Tie = "TIE";
+        private const string Win = "{0} IS WINNER";
         
         private static bool _playerTurn = true;
-        
+
+        private List<string> _board = new List<string>
+        {
+            "", "", "", "", "", "", "", "", ""
+        };
+
+        private readonly Dictionary<int, Button> _buttons;
+        private readonly JudgeBrain _judge;
+        private readonly Boty _boty;
+
         public Form1()
         {
             InitializeComponent();
-        }
+            label.Select();
 
+            _judge = new JudgeBrain();
+            _boty = new Boty();
+
+            _buttons = new Dictionary<int, Button>
+            {
+                {0, A1}, {1, A2}, {2, A3}, 
+                {3, B1}, {4, B2}, {5, B3}, 
+                {6, C1}, {7, C2}, {8, C3}
+            };
+        }
+        
         private void CheckGameEnd()
         {
-            var isThereWinner = false;
-            
-            if (A1.Text != "" && A1.Text == A2.Text && A2.Text == A3.Text 
-                || B1.Text != "" && B1.Text == B2.Text && B2.Text == B3.Text
-                || C1.Text != "" && C1.Text == C2.Text && C2.Text == C3.Text)
-            {
-                isThereWinner = true;
-            }
-            
-            else if (A1.Text != "" && A1.Text == B1.Text && B1.Text == C1.Text
-            || A2.Text != "" && A2.Text == B2.Text && B2.Text == C2.Text
-            || A3.Text != "" && A3.Text == B3.Text && B3.Text == C3.Text)
-            {
-                isThereWinner = true;
-            }
-            
-            else if (A1.Text != "" && A1.Text == B2.Text && B2.Text == C3.Text
-            || A3.Text != "" && A3.Text == B2.Text && B2.Text == C1.Text)
-            {
-                isThereWinner = true;
-            }
+            label.Text = _judge.CheckWinner(_board);
 
-            if (isThereWinner)
-            {
-                ShowWinner();
-                return;
-            }
-            
-            foreach (Control control in Controls)
-            {
-                if (control is Button && control.Enabled) return;
-            }
-            ShowTie();
-        }
+            if (label.Text == "") return;
 
-        private void ShowWinner()
-        {
-            label.Text = _playerTurn ? string.Format(Winner, PlayerSymbol) : string.Format(Winner, Boty.Symbol);
-
-            foreach (Control control in Controls)
+            if (label.Text != Tie)
             {
-                control.Enabled = !(control is Button);
+                label.Text = string.Format(Win, label.Text);
             }
-        }
-
-        private void ShowTie()
-        {
-            label.Text = Tie;
 
             foreach (Control control in Controls)
             {
@@ -75,12 +58,37 @@ namespace UI
 
         private void ButtonClick(object sender, EventArgs e)
         {
+            if (!_playerTurn) return;
+            
             var button = (Button) sender;
+            var key = _buttons.First(el => el.Value == button).Key;
+
+            _board[key] = PlayerSymbol;
             
-            button.Text  = (_playerTurn ? PlayerSymbol : Boty.Symbol).ToString();
-            
+            button.Text  = PlayerSymbol;
             button.Enabled = false;
+            label.Select();
+            
             CheckGameEnd();
+
+            if (_board.All(el => el != "")) return;
+            
+            _playerTurn = !_playerTurn;
+            GetBotMove();
+        }
+
+        private void GetBotMove()
+        {
+            var move = _boty.FindBestMove(_board);
+            var button = _buttons[move];
+
+            _board[move] = BotSymbol;
+            
+            button.Text  = BotSymbol;
+            button.Enabled = false;
+            
+            CheckGameEnd();
+            
             _playerTurn = !_playerTurn;
         }
 
@@ -88,11 +96,11 @@ namespace UI
         {
             if (label.Text == "") return;
 
-            NewGame();
-        }
-
-        private void NewGame()
-        {
+            _board = new List<string>
+            {
+                "", "", "", "", "", "", "", "", ""
+            };
+            
             foreach (Control control in Controls)
             {
                 control.Text = "";

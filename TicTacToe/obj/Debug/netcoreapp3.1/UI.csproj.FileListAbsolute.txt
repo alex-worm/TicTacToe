@@ -1,0 +1,13 @@
+H:\Resharper\TicTacToe\UI\bin\Debug\netcoreapp3.1\UI.exe
+H:\Resharper\TicTacToe\UI\bin\Debug\netcoreapp3.1\UI.deps.json
+H:\Resharper\TicTacToe\UI\bin\Debug\netcoreapp3.1\UI.runtimeconfig.json
+H:\Resharper\TicTacToe\UI\bin\Debug\netcoreapp3.1\UI.runtimeconfig.dev.json
+H:\Resharper\TicTacToe\UI\bin\Debug\netcoreapp3.1\UI.dll
+H:\Resharper\TicTacToe\UI\bin\Debug\netcoreapp3.1\UI.pdb
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.AssemblyInfoInputs.cache
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.AssemblyInfo.cs
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.csproj.CoreCompileInputs.cache
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.dll
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.pdb
+H:\Resharper\TicTacToe\UI\obj\Debug\netcoreapp3.1\UI.genruntimeconfig.cache
